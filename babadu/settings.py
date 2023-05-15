@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@$a7vmh!m0kcnohstmsp1b^@=&22=f^96!c$b4dnwcbrg=krdg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['babadu-production.up.railway.app','localhost', '127.0.0.1' ]
 
 
 # Application definition
@@ -80,8 +80,15 @@ WSGI_APPLICATION = 'babadu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'rifqi080203',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=sepakbola',
+        }
     }
 }
 
